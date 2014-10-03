@@ -15,6 +15,7 @@ module.exports = (method, url, parameters={}, headers={}, description="", expect
     method  : method
     uri     : "http://#{ZENrequest.host}:#{ZENrequest.port}/#{url}"
     headers : headers
+    timeout : 30000
   if parameters? and (method is "GET" or method is "DELETE")
     options.uri += "?#{qs.stringify(parameters)}"
   else
